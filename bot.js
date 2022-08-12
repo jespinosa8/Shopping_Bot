@@ -48,7 +48,7 @@ async function fillBilling(page){
     
     input = await page.$("input[id='lastName']");
     await input.press('Backspace'); //This fixes the inconsistent typing
-    await input.type('Espinosa');    
+    await input.type('');    
 
     await page.waitForSelector("#street");
     await page.focus('#street');
@@ -71,7 +71,7 @@ async function fillBilling(page){
 
     await page.waitForSelector("input[id='user.emailAddress']");
     await page.focus("input[id='user.emailAddress']");
-    await page.keyboard.type('jespinos08@gmail.com');  
+    await page.keyboard.type('');  
 
     await page.waitForSelector("input[id='user.phone']");
     await page.focus("input[id='user.phone']");
@@ -88,14 +88,14 @@ async function fillPayment(page){
     await page.waitForTimeout(2000);
     await page.waitForSelector("input[id='optimized-cc-card-number']");
     await page.focus("input[id='optimized-cc-card-number']");
-    await page.keyboard.type('4263982640269299');    
+    await page.keyboard.type('');    
     await page.waitForSelector("select[name='expiration-month']");
-    await page.select("select[name='expiration-month']", '02');
+    await page.select("select[name='expiration-month']", '');
     await page.waitForSelector("select[name='expiration-year']");
-    await page.select("select[name='expiration-year']", '2023');
+    await page.select("select[name='expiration-year']", '');
     await page.waitForSelector('#credit-card-cvv');
     await page.focus('#credit-card-cvv');
-    await page.keyboard.type('837');
+    await page.keyboard.type('');
     await page.waitForTimeout(1000);
     
 }
